@@ -8,10 +8,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-public class MoveToElement {
-	//1)moveToElement(): 
-	//	If we want to move mouse pointer from one position to another position that time we use 
-	//	method moveToElement().
+public class Click_Action {
+
 	public static void main(String[] args) throws InterruptedException 
 	{
 
@@ -25,18 +23,18 @@ public class MoveToElement {
 			options.merge(cp);
 	     	
 			WebDriver driver = new ChromeDriver(options);
-			driver.get("https://www.google.co.in/");
+			driver.get("http://www.uitestpractice.com/Students/Actions");
 			
 			driver.manage().window().maximize();
 			
 			Thread.sleep(2000);
-		
-			WebElement gmail = driver.findElement(By.linkText("Gmail"));
+			
+			WebElement clickme = driver.findElement(By.xpath("//button[@name='click']"));
+		  //	clickme.click();
 			
 			Actions act = new Actions(driver);
+			act.moveToElement(clickme).click().build().perform();
 			
-			act.moveToElement(gmail).click().perform();
-		
 			
 		
 	}
