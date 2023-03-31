@@ -35,6 +35,7 @@ public class IFrameinSelenium {
 		
         //Switching to child frame
 		driver.switchTo().frame(driver.findElement(By.xpath("//iframe[contains(@srcdoc,'Child ')]")));
+		
 		WebElement element1 = driver.findElement(By.xpath("//p[text()='Child Iframe']"));
 		
 		System.out.println(element1.getText());
@@ -54,7 +55,7 @@ public class IFrameinSelenium {
 		WebElement element4 = driver.findElement(By.xpath("//div[contains(text(),'Sample Nested')]"));
 		System.out.println(element4.getText());
 		 
-		refrashPage(driver);
+	
 		System.out.println("Successful");
 	}
      public static void refrashPage(WebDriver driver) 

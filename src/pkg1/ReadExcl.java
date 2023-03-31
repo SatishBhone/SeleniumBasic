@@ -13,8 +13,6 @@ public class ReadExcl {
 
 	public static void main(String[] args) throws IOException 
 	{
-		
-
 		 File file = new File("C:\\Users\\satis\\eclipse-workspace\\EmpInfo.xlsx");
 		 
 		 FileInputStream fis = new FileInputStream(file);

@@ -17,8 +17,7 @@ public class KeyBoardActions {
 		
 		driver.manage().window().maximize();
 		
-		//Actions Class
-		
+		//Actions Class		
 		Actions act = new Actions(driver);
 		
 		act.sendKeys(Keys.ENTER).build().perform();
@@ -34,6 +33,8 @@ public class KeyBoardActions {
 		Thread.sleep(4000);
 	
 		act.sendKeys(Keys.DELETE).build().perform();
+		
+		act.sendKeys(Keys.ESCAPE).build().perform();
 		
 		
 	}

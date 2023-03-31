@@ -4,6 +4,8 @@ package pkg1;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class ChangeThePositionOfBrowser {
 
@@ -11,8 +13,15 @@ public class ChangeThePositionOfBrowser {
 	{
 
      	System.setProperty("webdriver.chrome.driver", "C:\\Users\\satis\\Driver\\chromedriver_win32\\chromedriver.exe");
-         
-		WebDriver driver = new ChromeDriver();
+     	
+     	ChromeOptions options = new ChromeOptions();
+		options.addArguments("--remote-allow-origins=*");
+		options.addArguments("--disable notifications");
+		DesiredCapabilities cp = new DesiredCapabilities();
+		cp.setCapability(ChromeOptions.CAPABILITY, options);
+		options.merge(cp);
+     	
+		WebDriver driver = new ChromeDriver(options);
 		
 		driver.get("https://flipkart.com/");
 		

@@ -18,7 +18,7 @@ public class ExcelSheetRead {
 		 
 		 FileInputStream fis = new FileInputStream(file);
 		 
-		 XSSFWorkbook wb =new XSSFWorkbook("fis");
+		 XSSFWorkbook wb =new XSSFWorkbook(fis);
 		 
 		 XSSFSheet sheet = wb.getSheetAt(0);
 		 
@@ -31,7 +31,7 @@ public class ExcelSheetRead {
 			 for(int j=0; j<colcount; j++)
 			 {
 				String value = currentrow.getCell(j).toString();
-				System.out.println(value);
+				System.out.print(" /"+value);
 				 
 			 }
 			 System.out.println();

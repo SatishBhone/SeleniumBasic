@@ -14,7 +14,7 @@ public class MouseAction1 {
 		
 		driver.get("https://demo.guru99.com/test/simple_context_menu.html");
 		driver.manage().window().maximize();
-		Thread.sleep(2000);
+		Thread.sleep(2000); 
 		
 		Actions act = new Actions(driver);
 		

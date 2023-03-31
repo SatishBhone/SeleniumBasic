@@ -34,8 +34,9 @@ public class PopUpInSelenium {
 		element1.click();
 		
 		
-		Thread.sleep(5000);
-		alt.accept();    
+		Thread.sleep(6000);
+		alt.accept();  
+		Thread.sleep(2000);
 		WebElement element2 = driver.findElement(By.xpath("//button[@id='confirmButton']"));
 		element2.click();
 		

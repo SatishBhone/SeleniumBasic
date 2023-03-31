@@ -19,7 +19,7 @@ public class MouseAction {
 	//	WebDriver driver = new FirefoxDriver();
 		
 		driver.get("https://flipkart.com/");
-		
+		 
 		driver.manage().window().maximize();
 		Thread.sleep(2000);
 		

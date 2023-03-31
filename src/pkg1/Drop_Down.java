@@ -7,21 +7,32 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.Select;
 
 public class Drop_Down {
 
 	public static void main(String[] args) throws InterruptedException {
+         
+		
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\satis\\Driver\\chromedriver_win32\\chromedriver.exe");
 		
-		WebDriver driver = new ChromeDriver();
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--remote-allow-origins=*");
+		options.addArguments("--disable notifications");
+		DesiredCapabilities cp = new DesiredCapabilities();
+		cp.setCapability(ChromeOptions.CAPABILITY, options);
+		options.merge(cp);
+		WebDriver driver = new ChromeDriver(options);
 		
 		driver.get("https://courses.letskodeit.com/practice");
 		driver.manage().window().maximize();
-		
+		 
 	   Thread.sleep(2000);
 	   
 	   WebElement list = driver.findElement(By.xpath("//select[@id='carselect']"));
+	   
 	   Select sel = new Select(list);
 	   
 	   sel.selectByIndex(0);
@@ -43,12 +54,12 @@ public class Drop_Down {
 	   
 	   System.out.println("pass");
 	   
-	   List<WebElement> options = sel.getOptions();
+	   List<WebElement> options1 = sel.getOptions();
 	   List<String> dataFromUI = new ArrayList<String>();
 	   
-	   for(int i=0; i<options.size(); i++) 
+	   for(int i=0; i<options1.size(); i++) 
 	   {
-		   dataFromUI.add(options.get(i).getText());   
+		   dataFromUI.add(options1.get(i).getText());   
 	   }
 	   System.out.println(dataFromUI);
 	}

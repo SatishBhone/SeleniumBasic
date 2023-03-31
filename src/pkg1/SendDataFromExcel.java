@@ -14,7 +14,7 @@ public class SendDataFromExcel {
 	
 	public static String readData(int row, int col) throws IOException
 	{
-             File file = new File("C:\\Users\\satis\\eclipse-workspace\\Satish.xlsx");
+        File file = new File("C:\\Users\\satis\\eclipse-workspace\\Satish.xlsx");
 		
 		FileInputStream fis = new FileInputStream(file);
 		
@@ -34,8 +34,6 @@ public class SendDataFromExcel {
 	
 	public static void main(String[] args) throws IOException, InterruptedException 
 	{
-		
-		
 		System.out.println(readData(0,0));
 		System.out.println(readData(0,1));
 		System.out.println(readData(1,0));
