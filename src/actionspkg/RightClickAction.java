@@ -1,6 +1,5 @@
 package actionspkg;
 
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,12 +8,11 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-public class Click_Action {
+public class RightClickAction {
 
-	public static void main(String[] args) throws InterruptedException 
+	public static void main(String[] args) throws InterruptedException
 	{
-
-	       System.setProperty("webdriver.chrome.driver", "C:\\Users\\satis\\Driver\\chromedriver_win32\\chromedriver.exe");
+		 System.setProperty("webdriver.chrome.driver", "C:\\Users\\satis\\Driver\\chromedriver_win32\\chromedriver.exe");
 	     	
 	     	ChromeOptions options = new ChromeOptions();
 			options.addArguments("--remote-allow-origins=*");
@@ -24,27 +22,18 @@ public class Click_Action {
 			options.merge(cp);
 	     	
 			WebDriver driver = new ChromeDriver(options);
-			driver.get("http://www.uitestpractice.com/Students/Actions");
+			driver.get("https://www.google.co.in/");
 			
 			driver.manage().window().maximize();
 			
 			Thread.sleep(2000);
-			
-			WebElement clickme = driver.findElement(By.xpath("//button[@name='click']"));
-		  //	clickme.click();
+		
+			WebElement gmail = driver.findElement(By.linkText("Gmail"));
 			
 			Actions act = new Actions(driver);
-		// move to particular element and click on it
-			act.moveToElement(clickme).click().build().perform();
 			
-			
-		// Alert class is used to Handle alert Pop-Up;	
-	       Alert alt = driver.switchTo().alert();
-		
-			alt.accept();  // --> click on ok button
-			
-			
-		
+			act.contextClick(gmail).perform();
+
 	}
 
 }
