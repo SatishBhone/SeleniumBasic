@@ -35,7 +35,7 @@ public class SendKeysMathod {
 		
 		Actions action = new Actions(driver); 
 		
-		for(int i=7;i>=0;i--) 
+		for(int i=20; i>=0; i--) 
 		{ 
 			action.sendKeys(Keys.ARROW_DOWN).build().perform(); 
 		    Thread.sleep(2000); 
@@ -43,7 +43,7 @@ public class SendKeysMathod {
 		
 		      Thread.sleep(2000); 
 		
-		for(int i=0;i<=6;i++)
+		for(int i=0; i<=15; i++)
 		{ 
 			action.sendKeys(Keys.ARROW_UP).build().perform(); 
 		    Thread.sleep(2000); 
