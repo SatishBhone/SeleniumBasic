@@ -1,6 +1,9 @@
 package actionspkg;
 
-import java.util.List;
+
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -10,12 +13,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.support.ui.Select;
+
 import org.testng.Assert;
 
 public class TabKeyAction {
 
-	public static void main(String[] args) throws InterruptedException 
+	public static void main(String[] args) throws InterruptedException, AWTException 
 	{
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\satis\\Driver\\chromedriver_win32\\chromedriver.exe");
 		
@@ -104,7 +107,18 @@ public class TabKeyAction {
     	 
     	 System.out.println("Test get passed");
     	 
+    	// Robot class  
+    	 Robot robot = new Robot();
     	 
+    	 //Press key ctrl+shift+i
+    	 
+    	 robot.keyPress(KeyEvent.VK_CONTROL);
+    	 robot.keyPress(KeyEvent.VK_SHIFT);
+    	 robot.keyPress(KeyEvent.VK_I);
+    	 
+    	 //Release key ctrl+shift+ i;
+    	 
+    	 robot.keyRelease(KeyEvent.VK_I);
 	}
 
 }
